@@ -67,7 +67,7 @@ const Movies = () => {
         <MovieThumbs movies={movies} />
       )}
 
-      {movies && movies.lenth === 0 && (query || searchParams.get('query')) && (
+      {movies && !movies.length && (query || searchParams.get('query')) && (
         <Message>Sorry, we couldn't find any results</Message>
       )}
 
