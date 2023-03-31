@@ -37,7 +37,7 @@ const Reviews = () => {
         </ReviewsStyled>
       )}
 
-      {reviews && !reviews.lenth && (
+      {reviews && !reviews.lenth && reviews.lenth !== undefined && (
         <Message>We don't have any reviews for this movie</Message>
       )}
 
