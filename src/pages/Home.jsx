@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <div>
       <Filter onChangeFilter={changeFilter} />
-      {movies !== undefined && movies.length !== 0 && (
+      {!!movies && !!movies.length && (
         <GalleryStyled>
           {movies.map((movie, index) => (
             <GalleryItem key={index} movie={movie} />

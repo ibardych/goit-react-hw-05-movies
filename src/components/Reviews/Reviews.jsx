@@ -28,7 +28,7 @@ const Reviews = () => {
 
   return (
     <>
-      {reviews && reviews.length && (
+      {reviews && !!reviews.length && (
         <ReviewsStyled>
           {reviews.map(({ id, author, content, updated_at }, index) => (
             <li key={index}>

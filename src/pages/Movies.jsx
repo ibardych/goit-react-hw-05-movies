@@ -63,7 +63,7 @@ const Movies = () => {
         OnHandlePopularQuery={handleSearch}
       />
 
-      {movies !== undefined && movies.length !== 0 && (
+      {movies !== undefined && !!movies.length && (
         <MovieThumbs movies={movies} />
       )}
 

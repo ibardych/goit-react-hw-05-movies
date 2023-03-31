@@ -41,7 +41,7 @@ export const useFetchPages = (callback, isInitialRequest) => {
         );
         if (
           data.results !== undefined &&
-          data.results.length !== 0 &&
+          !!data.results.length &&
           data.page === 1
         ) {
           // toast.success(`We found ${data.total} movies`);
