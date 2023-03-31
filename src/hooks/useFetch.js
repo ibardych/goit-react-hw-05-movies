@@ -34,7 +34,6 @@ export const useFetchPages = (callback, isInitialRequest) => {
       setStatus(fetchStatus.LOADING);
       try {
         const data = await callback();
-        console.log(data);
         setData(prev =>
           isInitialRequest
             ? data

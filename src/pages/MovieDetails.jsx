@@ -20,8 +20,6 @@ const MovieDetails = () => {
 
   const { data, status } = useFetch(getMovieDetails);
 
-  console.log(data);
-
   return (
     <div>
       <BackButton backlink={backLinkHref}></BackButton>

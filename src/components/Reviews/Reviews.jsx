@@ -20,8 +20,6 @@ const Reviews = () => {
 
   const { results: reviews, totalPages, reachedEnd } = data;
 
-  console.log('Reviews: ', reviews);
-
   const loadMore = () => {
     setPage(page + 1);
   };

@@ -16,8 +16,6 @@ const Cast = () => {
 
   const { data, status } = useFetch(getMovieCast);
 
-  console.log(data);
-
   return (
     <>
       {data && data.cast && data.cast.length !== 0 && (

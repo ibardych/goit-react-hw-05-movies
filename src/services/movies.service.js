@@ -7,7 +7,6 @@ axios.defaults.params = {
 };
 
 export const findMoviesByQuery = async ({ query, page }) => {
-  console.log(query);
   const { data } = await axios.get('search/movie', {
     params: {
       query,
@@ -17,10 +16,6 @@ export const findMoviesByQuery = async ({ query, page }) => {
 
   const { results, total_pages: totalPages, total_results: total } = data;
   const reachedEnd = totalPages === page;
-
-  console.log('page: ', page);
-  console.log('totalPages: ', totalPages);
-  console.log('reachedEnd: ', reachedEnd);
 
   return { results, totalPages, total, reachedEnd, page };
 };
@@ -54,8 +49,6 @@ export const getCast = async ({ movieId }) => {
       language: 'en-US',
     },
   });
-
-  console.log(data);
 
   return data;
 };
