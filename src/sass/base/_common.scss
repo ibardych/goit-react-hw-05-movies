@@ -1,0 +1,33 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  // font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: $color1;
+  line-height: 1.2;
+  position: relative;
+  scroll-behavior: smooth;
+  // background: url(./../../images/bg.png) repeat #222;
+  // background-size: 400px auto;
+  background: linear-gradient(120deg, rgb(47, 56, 71) 0%, rgb(15, 21, 34) 100%);
+  color: #cbcbcb;
+  min-height: 100vh;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  min-height: inherit !important;
+}

@@ -1,0 +1,21 @@
+{
+  "autoimport.completions.enabled": true,
+  "autoimport.completions.quotes": "'",
+  "autoimport.completions.triggerChars": [
+    ".",
+    ":",
+    "<",
+    "\"",
+    "'",
+    "`",
+    "/",
+    "@",
+    "#",
+    "$",
+    "{",
+    "(",
+    "["
+  ],
+  "autoimport.showNotifications": true,
+  "autoimport.showSuggestions": true
+}

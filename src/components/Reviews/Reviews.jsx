@@ -1,0 +1,57 @@
+import { ReviewsStyled } from './Reviews.styled';
+import { useParams } from 'react-router-dom';
+import { useFetchPages } from './../../hooks/useFetch';
+import { useCallback, useState } from 'react';
+import { getReviews } from 'services';
+import { fetchStatus } from './../../constants/fetch.status';
+import { Button } from './../Styled/Button.styled';
+import Message from 'components/Message/Message';
+import { Loader } from 'components/Styled';
+
+const Reviews = () => {
+  const { movieId } = useParams();
+  const [page, setPage] = useState(1);
+
+  const getMovieReviews = useCallback(async () => {
+    return await getReviews({ movieId, page });
+  }, [movieId, page]);
+
+  const { data, status } = useFetchPages(getMovieReviews, page === 1);
+
+  const { results: reviews, totalPages, reachedEnd } = data;
+
+  console.log('Reviews: ', reviews);
+
+  const loadMore = () => {
+    setPage(page + 1);
+  };
+
+  return (
+    <>
+      {reviews && reviews.lenth !== 0 && (
+        <ReviewsStyled>
+          {reviews.map(({ id, author, content }, index) => (
+            <li key={index}>
+              <div className="author">{author}</div>
+              <div className="content">{content}</div>
+            </li>
+          ))}
+        </ReviewsStyled>
+      )}
+
+      {reviews && !reviews.lenth && (
+        <Message>We don't have any reviews for this movie</Message>
+      )}
+
+      {status === fetchStatus.LOADING && <Loader className="pending" />}
+
+      {totalPages > 1 && !reachedEnd && status !== fetchStatus.LOADING && (
+        <Button type="button" onClick={loadMore}>
+          Load more
+        </Button>
+      )}
+    </>
+  );
+};
+
+export default Reviews;
