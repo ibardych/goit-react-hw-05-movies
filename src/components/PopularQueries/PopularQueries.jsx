@@ -9,7 +9,7 @@ const PopularQueries = ({
 }) => {
   return (
     <PopularQueriesStyled>
-      <div className="title">Popular queries</div>
+      <div className="title">Popular genres</div>
       {queries.map(query => (
         <div
           key={query}

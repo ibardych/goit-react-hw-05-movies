@@ -71,7 +71,7 @@ const Movies = () => {
         <Message>Sorry, we couldn't find any results</Message>
       )}
 
-      {movies && !movies.lenth && !query && !searchParams.get('query') && (
+      {movies && !movies.length && !query && !searchParams.get('query') && (
         <Message>Please enter or select search query</Message>
       )}
 

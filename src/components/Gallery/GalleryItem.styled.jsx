@@ -137,9 +137,9 @@ export const GalleryItemStyled = styled.li`
 
     & .item {
       text-align: center;
-      color: rgba(255, 255, 255, 0.693);
+      color: rgba(255, 255, 255, 0.861);
       font-size: 14px;
-      font-weight: 200;
+      font-weight: 400;
       ${transition('color')};
 
       & b {

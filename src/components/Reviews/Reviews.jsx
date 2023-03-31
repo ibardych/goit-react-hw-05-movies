@@ -24,20 +24,23 @@ const Reviews = () => {
     setPage(page + 1);
   };
 
+  console.log(data);
+
   return (
     <>
-      {reviews && reviews.lenth !== 0 && (
+      {reviews && reviews.length && (
         <ReviewsStyled>
-          {reviews.map(({ id, author, content }, index) => (
+          {reviews.map(({ id, author, content, updated_at }, index) => (
             <li key={index}>
               <div className="author">{author}</div>
+              <div className="date">{updated_at.slice(0, 10)}</div>
               <div className="content">{content}</div>
             </li>
           ))}
         </ReviewsStyled>
       )}
 
-      {reviews && !reviews.lenth && reviews.lenth !== undefined && (
+      {reviews && !reviews.length && (
         <Message>We don't have any reviews for this movie</Message>
       )}
 
